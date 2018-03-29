@@ -23,9 +23,13 @@ class API:
         self.response = self.conn.getresponse()
         data = self.response.read()
         result = json.loads(data.decode('ascii'))
-        ans = result["Predictions"][0]["Probability"]>result["Predictions"][1]["Probability"]
+        ans = 0
+        if result["Predictions"][0]["Probability"]>result["Predictions"][1]["Probability"]:
+            ans = result["Predictions"][0]['Tag'] == "good_beans"
         print("result:",ans)
         return ans
+
+
 
     def __exit__(self):
         self.conn.close()
