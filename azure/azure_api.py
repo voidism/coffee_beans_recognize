@@ -5,12 +5,12 @@ class API:
         self.headers = {
             # Request headers
             'Content-Type': 'application/octet-stream',
-            'Prediction-key': '82d2bd2e2c4444c590bc80e242800c58',
+            'Prediction-key': '###############',
         }
 
         self.params = urllib.parse.urlencode({
             # Request parameters
-            'iterationId': '4e83b1ba-87e3-4eb4-9349-1044f2f645f1',
+            'iterationId': '###########################',
             'application': 'customvision',
         })
         self.body = None
@@ -19,7 +19,7 @@ class API:
 
     def quest(self,filename):
         self.body = open(filename, mode="rb")
-        self.conn.request("POST", "/customvision/v1.1/Prediction/91c2afcb-d86e-470b-a884-4a8e0238590c/image?%s" % self.params, self.body, self.headers)
+        self.conn.request("POST", "/customvision/v1.1/Prediction/#################/image?%s" % self.params, self.body, self.headers)
         self.response = self.conn.getresponse()
         data = self.response.read()
         result = json.loads(data.decode('ascii'))
