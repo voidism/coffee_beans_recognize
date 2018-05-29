@@ -3,10 +3,10 @@ from azure.cognitiveservices.vision.customvision.training.models import ImageUrl
 from azure.cognitiveservices.vision.customvision.prediction import prediction_endpoint
 from azure.cognitiveservices.vision.customvision.prediction.prediction_endpoint import models
 
-projectid = '91c2afcb-d86e-470b-a884-4a8e0238590c'
+projectid = '############'
 # Replace with a valid key
-training_key = "a1d72f86f97d42578ca75f7f7320f686"
-prediction_key = "82d2bd2e2c4444c590bc80e242800c58"
+training_key = "###########"
+prediction_key = "##################"
 trainer = training_api.TrainingApi(training_key)
 
 predictor = prediction_endpoint.PredictionEndpoint(prediction_key)
